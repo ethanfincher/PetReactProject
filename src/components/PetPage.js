@@ -1,24 +1,51 @@
-import React, { useState } from 'react'
-import PetCardList from './PetCardList'
+import React, { useState, useEffect } from 'react';
+import PetForm from './PetForm';
+import PetCardList from './PetCardList.js';
 
 export default function PetPage() {
-    const [breed, setBreed] = useState("")
+	
+	const initialUrlSettings = {
+		base: 'https://api.thecatapi.com/v1/images/search?',
+		breed: '',
+		key: process.env.CAT_API_KEY,
+		limit: ''
+	};
 
-    return (
-			<div>
-				<h1>this is the PetPage</h1>
-				<form>
-					<label for='breed'></label>
-					<select name='breed' id='breed' onChange = {(event) => setBreed
-                    (event.target.value)}>
-						<option value='abys'>Abyssinian</option>
-						<option value='abob'>American Bobtail</option>
-						<option value='asho'>American Shorthair</option>
-						<option value='beng'>Bengal</option>
-					</select>
-					<button type='submit'>search</button>
-				</form>
-				<PetCardList></PetCardList>
-			</div>
+	const [urlSettings, setUrlSettings] = useState(initialUrlSettings)
+	const [catList, setCatList] = useState([])
+	
+	function breedChange(event){
+		// console.log(event.target.value)
+		setUrlSettings({...urlSettings, breed: `${event.target.value}`})
+		// console.log(urlSettings)
+	}
+	function breedSubmit(event){
+		event.preventDefault()
+		getAPIList(
+			`${urlSettings.base}limit=${urlSettings.limit}&breed_id=${urlSettings.breed}`
 		);
+	}
+	function getAPIList(url){
+		// console.log(url)
+		fetch(url, {
+			// headers: {'X-API-KEY': `${urlSettings.key}`}
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(data)
+				setCatList(data)});
+	}
+
+	useEffect(()=>{
+		getAPIList(
+			`${urlSettings.base}limit=${urlSettings.limit}&breed_id=${urlSettings.breed}`
+		);
+	}, [])
+	
+	return (
+		<>
+			<PetForm change = {breedChange} submit = {breedSubmit}></PetForm>
+			<PetCardList catList = {catList}></PetCardList>
+		</>
+	);
 }

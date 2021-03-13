@@ -1,7 +1,6 @@
 import React from 'react';
 
-export default function PetCard({ cat }) {
+export default function PetCard() {
 	return <div>
-        <img src = {cat.url} alt = ''></img>
     </div>;
 }

@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import PetCard from './PetCard.js';
+import React from 'react';
 
-export default function PetCardList() {
 
-	const [catList, setCatList] = useState([]);
-
-	// useEffect(() => {
-	// 	fetch('https://api.thecatapi.com/v1/images/search?limit=5')
-	// 		.then((response) => response.json())
-	// 		.then((data) => setCatList(data));
-	// }, []);
+export default function PetCardList({ catList }) {
 
 	return (
 		<div>
-			{catList.map((cat) => (
-				<PetCard cat={cat} />
-			))}
+			{catList.map((cat) =>{
+				return(
+				<div>
+					<img src = {cat.url} alt = ''></img>
+				</div>
+					)
+			})}
 		</div>
 	);
 }
