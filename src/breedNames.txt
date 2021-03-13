@@ -1,0 +1,9 @@
+abys: Abyssinian
+abob: American Bobtail
+asho: American Shorthair
+beng: Bengal
+crex: Cornish Rex
+dons: Donskoy
+lihu: Dragon Li
+mcoo: Maine Coon
+sfol: Scottish Fold
