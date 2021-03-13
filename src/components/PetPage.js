@@ -7,8 +7,8 @@ export default function PetPage() {
 	const initialUrlSettings = {
 		base: 'https://api.thecatapi.com/v1/images/search?',
 		breed: '',
-		key: process.env.CAT_API_KEY,
-		limit: ''
+		// key: process.env.CAT_API_KEY,
+		limit: '5'
 	};
 
 	const [urlSettings, setUrlSettings] = useState(initialUrlSettings)

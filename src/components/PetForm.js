@@ -3,7 +3,7 @@ import React from 'react';
 export default function PetForm({ change, submit }) {
 	return (
 		<form onSubmit={submit}>
-			<label for='breed'></label>
+			<label for='breed'>Breed: </label>
 			<select name='breed' id='breed' onChange={change}>
 				<option value=''>none</option>
 				<option value='abys'>Abyssinian</option>
