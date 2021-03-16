@@ -3,31 +3,37 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import CatPage from './components/CatPage.js';
-import DogPage from './components/DogPage.js'
-import RandomCatPage from './components/RandomCatPage.js'
-import HomePage from './components/HomePage.js'
+import DogPage from './components/DogPage.js';
+import RandomCatPage from './components/RandomCatPage.js';
+import HomePage from './components/HomePage.js';
 
 function App() {
-  return (
+	return (
 		<Router>
 			<div className='App'>
 				<header>
-					<h1>
-						<Link to='/'>
-							<h1>home Page</h1>
-						</Link>
-					</h1>
-					<h1>
-						<Link to='/catPage'>
-							<h1>Cat page</h1>
-						</Link>
-						<Link to='/dogPage'>
-							<h1>Dog page</h1>
-						</Link>
-						<Link to='/randomCatPage'>
-							<h1>Random Cat page</h1>
-						</Link>
-					</h1>
+					<ul>
+						<li>
+							<Link to='/'>
+								<h1>home Page</h1>
+							</Link>
+						</li>
+						<li>
+							<Link to='/catPage'>
+								<h1>Cat page</h1>
+							</Link>
+						</li>
+						<li>
+							<Link to='/dogPage'>
+								<h1>Dog page</h1>
+							</Link>
+						</li>
+						<li>
+							<Link to='/randomCatPage'>
+								<h1>Random Cat page</h1>
+							</Link>
+						</li>
+					</ul>
 				</header>
 				<main>
 					<Switch>

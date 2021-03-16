@@ -7,9 +7,9 @@ export default function PetCard({ petList }) {
 		<div>
 			{petList.map((pet) =>{
 				return (
-					<div className = 'petCard'>
+					<div className='petCard'>
+						<img src={pet.url} alt='' className='petImage'></img>
 						<h3>{pet.breeds[0].name}</h3>
-						<img src={pet.url} alt=''></img>
 						<p>{pet.breeds[0].description}</p>
 					</div>
 				);

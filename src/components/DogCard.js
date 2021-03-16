@@ -6,7 +6,7 @@ export default function DogCard({ petList }) {
 			{petList.map((pet) => {
 				return (
 					<div className='petCard'>
-						<img src = {pet.url} alt = ''></img>
+						<img src = {pet.url} alt = '' className = 'petImage'></img>
 					</div>
 				);
 			})}
