@@ -13,7 +13,7 @@ export default function RandomCatForm({ change, click }) {
 				<option value='7'>ties</option>
                 <option value='9'>dreams</option>
 			</select>
-			<button type = 'button' onClick = {click}>More!</button>
+			<button type = 'button' onClick = {click} className = 'more'>More!</button>
 		</form>
 	);
 }

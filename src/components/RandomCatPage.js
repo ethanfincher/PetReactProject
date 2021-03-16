@@ -6,7 +6,6 @@ export default function RandomCatPage() {
 	const initialUrlSettings = {
 		base: 'https://api.thecatapi.com/v1/images/search?',
 		category: '5',
-		// key: process.env.CAT_API_KEY,
 		limit: '5',
 	};
 
@@ -26,7 +25,6 @@ export default function RandomCatPage() {
 	function getAPIList(url) {
 		// console.log(url)
 		fetch(url, {
-			// headers: {'X-API-KEY': `${urlSettings.key}`}
 		})
 			.then((response) => response.json())
 			.then((data) => {
@@ -49,12 +47,15 @@ export default function RandomCatPage() {
 
 	return (
 		<>
-            <h2>Random Cat Pictures!</h2>
-			<p>Just select the category of cat you would like to see. You can also hit the More button to see extra pictures of the currentl category of cat!</p>
-			<RandomCatForm change={categoryChange} click = {more}></RandomCatForm>
-            {catList.map((cat)=>{
-                return (<img src = {cat.url} alt = '' className = 'randomImage'></img>)
-            })}
+			<h2>Random Cat Pictures!</h2>
+			<p className='intro'>
+				Just select the category of cat you would like to see. You can also hit
+				the More button to see extra pictures of the currentl category of cat!
+			</p>
+			<RandomCatForm change={categoryChange} click={more}></RandomCatForm>
+			{catList.map((cat) => {
+				return <img src={cat.url} alt='' className='randomImage'></img>;
+			})}
 		</>
 	);
 }

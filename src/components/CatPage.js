@@ -6,7 +6,6 @@ export default function CatPage() {
 	const initialUrlSettings = {
 		base: 'https://api.thecatapi.com/v1/images/search?',
 		breed: 'abys',
-		// key: process.env.CAT_API_KEY,
 		limit: '1',
 	};
 
@@ -26,7 +25,6 @@ export default function CatPage() {
 	function getAPIList(url) {
 		// console.log(url)
 		fetch(url, {
-			// headers: {'X-API-KEY': `${urlSettings.key}`}
 		})
 			.then((response) => response.json())
 			.then((data) => {
@@ -44,8 +42,8 @@ export default function CatPage() {
 	return (
 		<div className='cats'>
 			<div className='heading'>
-				<h2>Welcome to the cat page!</h2>
-				<p>
+				<h2>Cat Info Page</h2>
+				<p className = 'intro'>
 					Select a cat breed from the dropdown to see a picture and description
 					if your favorite kind of cat!
 				</p>

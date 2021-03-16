@@ -6,7 +6,6 @@ export default function DogPage() {
 	const initialUrlSettings = {
 		base: 'https://api.thedogapi.com/v1/images/search?',
 		breed: '23',
-		// key: process.env.dog_API_KEY,
 		limit: '1',
 	};
 
@@ -25,7 +24,6 @@ export default function DogPage() {
 	function getAPIList(url) {
 		// console.log(url)
 		fetch(url, {
-			// headers: {'X-API-KEY': `${urlSettings.key}`}
 		})
 			.then((response) => response.json())
 			.then((data) => {
@@ -43,10 +41,10 @@ export default function DogPage() {
 	return (
 		<div className='dogs'>
 			<div className='heading'>
-				<h2>Welcome to the dog page!</h2>
-				<p>
-					Select a cat breed from the dropdown to see a picture and description
-					if your favorite kind of cat!
+				<h2>Dog Info Page</h2>
+				<p className='intro'>
+					Select a dog breed from the dropdown to see a picture and description
+					if your favorite kind of dog!
 				</p>
 			</div>
 			<DogForm change={breedChange}></DogForm>

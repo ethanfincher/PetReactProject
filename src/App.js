@@ -15,22 +15,22 @@ function App() {
 					<ul className='navBar'>
 						<li className='navUnit'>
 							<Link to='/'>
-								<h1>home Page</h1>
+								<h1>Home Page</h1>
 							</Link>
 						</li>
 						<li className='navUnit'>
 							<Link to='/catPage'>
-								<h1>Cat page</h1>
+								<h1>Cat Info</h1>
 							</Link>
 						</li>
 						<li className='navUnit'>
 							<Link to='/dogPage'>
-								<h1>Dog page</h1>
+								<h1>Dog Info</h1>
 							</Link>
 						</li>
 						<li className='navUnit'>
 							<Link to='/randomCatPage'>
-								<h1>Random Cat page</h1>
+								<h1>Random Cats</h1>
 							</Link>
 						</li>
 					</ul>
