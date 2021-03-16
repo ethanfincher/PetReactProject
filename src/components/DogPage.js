@@ -5,7 +5,7 @@ import DogCard from './DogCard.js';
 export default function DogPage() {
 	const initialUrlSettings = {
 		base: 'https://api.thedogapi.com/v1/images/search?',
-		breed: '23',
+		breed: '113',
 		limit: '1',
 	};
 
