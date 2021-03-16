@@ -4,6 +4,7 @@ export default function DogForm({ change }) {
 	return (
 		<form className='dogForm'>
 			<select name='breed' id='breed' onChange={change}>
+				<option value='113'>French Bulldog</option>
 				<option value='23'>Australian Shepherd</option>
 				<option value='115'>German Shepherd</option>
 				<option value='76'>Chesapeake Bay Retriever</option>
