@@ -14,20 +14,16 @@ export default function DogPage() {
 
 	function breedChange(event) {
 		event.preventDefault();
-		// console.log(event.target.value)
 		setUrlSettings({ ...urlSettings, breed: `${event.target.value}` });
 		getAPIList(
 			`${urlSettings.base}limit=${urlSettings.limit}&breed_id=${event.target.value}`
 		);
-		// console.log(urlSettings)
 	}
 	function getAPIList(url) {
-		// console.log(url)
 		fetch(url, {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data[0].url);
 				setDogList(data);
 			});
 	}

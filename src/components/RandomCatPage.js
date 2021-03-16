@@ -14,21 +14,17 @@ export default function RandomCatPage() {
 
 	function categoryChange(event) {
         event.preventDefault();
-		// console.log(event.target.value)
 		setUrlSettings({ ...urlSettings, category: `${event.target.value}` });
 				getAPIList(
 					`${urlSettings.base}limit=${urlSettings.limit}&category_ids=${event.target.value}`
 				);
-		// console.log(urlSettings)
 	}
 	
 	function getAPIList(url) {
-		// console.log(url)
 		fetch(url, {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				setCatList(data);
 			});
 	}
