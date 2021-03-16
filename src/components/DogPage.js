@@ -14,15 +14,13 @@ export default function DogPage() {
 	const [dogList, setDogList] = useState([]);
 
 	function breedChange(event) {
+		event.preventDefault();
 		// console.log(event.target.value)
 		setUrlSettings({ ...urlSettings, breed: `${event.target.value}` });
-		// console.log(urlSettings)
-	}
-	function breedSubmit(event) {
-		event.preventDefault();
 		getAPIList(
-			`${urlSettings.base}limit=${urlSettings.limit}&breed_id=${urlSettings.breed}`
+			`${urlSettings.base}limit=${urlSettings.limit}&breed_id=${event.target.value}`
 		);
+		// console.log(urlSettings)
 	}
 	function getAPIList(url) {
 		// console.log(url)
@@ -43,9 +41,16 @@ export default function DogPage() {
 	}, []);
 
 	return (
-		<>
-			<DogForm change={breedChange} submit={breedSubmit}></DogForm>
+		<div className='dogs'>
+			<div className='heading'>
+				<h2>Welcome to the dog page!</h2>
+				<p>
+					Select a cat breed from the dropdown to see a picture and description
+					if your favorite kind of cat!
+				</p>
+			</div>
+			<DogForm change={breedChange}></DogForm>
 			<DogCard petList={dogList}></DogCard>
-		</>
+		</div>
 	);
 }

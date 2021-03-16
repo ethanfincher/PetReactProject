@@ -12,23 +12,23 @@ function App() {
 		<Router>
 			<div className='App'>
 				<header>
-					<ul>
-						<li>
+					<ul className='navBar'>
+						<li className='navUnit'>
 							<Link to='/'>
 								<h1>home Page</h1>
 							</Link>
 						</li>
-						<li>
+						<li className='navUnit'>
 							<Link to='/catPage'>
 								<h1>Cat page</h1>
 							</Link>
 						</li>
-						<li>
+						<li className='navUnit'>
 							<Link to='/dogPage'>
 								<h1>Dog page</h1>
 							</Link>
 						</li>
-						<li>
+						<li className='navUnit'>
 							<Link to='/randomCatPage'>
 								<h1>Random Cat page</h1>
 							</Link>

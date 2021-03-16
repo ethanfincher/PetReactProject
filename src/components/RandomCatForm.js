@@ -1,9 +1,8 @@
 import React from 'react';
 
-export default function RandomCatForm({ change, submit }) {
+export default function RandomCatForm({ change, click }) {
 	return (
-		<form onSubmit={submit}>
-			<label for='category'>Breed: </label>
+		<form className = 'randomCatForm'>
 			<select name='category' id='category' onChange={change}>
 				<option value='5'>boxes</option>
 				<option value='15'>cloths</option>
@@ -14,7 +13,7 @@ export default function RandomCatForm({ change, submit }) {
 				<option value='7'>ties</option>
                 <option value='9'>dreams</option>
 			</select>
-			<button type='submit'>search</button>
+			<button type = 'button' onClick = {click}>More!</button>
 		</form>
 	);
 }

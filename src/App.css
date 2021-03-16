@@ -1,26 +1,35 @@
-
-ul {
+body{
+    text-align: center;
+    background-color: #eeeedd;
+}
+.navBar {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: space-around;
-  background-color: blue;
+  background: linear-gradient(#ffffff, #e1e1e1);
+  border-bottom: 1px solid lightgray;
 }
 
-li{
-     background-color: red;
+li.navUnit{
+
      padding: 0px 8px;
 }
 
 a{
     text-decoration: none;
-    color: white;
+    color: rgb(63, 62, 62);
     /* padding: 1px; */
 }
 
 h3{
     margin-top: 5px;
+}
+
+.randomImage{
+    max-width: 50%;
+    max-height: 75%;
 }
 
 .petCard{
@@ -31,10 +40,28 @@ h3{
     text-align: center;
     border: 1px solid lightgray;
     border-radius: 5px;
+    background: #eeeeee;
+    padding-bottom: 15px;
 }
 
 img.petImage{
     max-width: 100%;
     max-height: 80%;
     border-radius: 3px;
+}
+
+.description{
+    text-align: left;
+}
+
+.randomCatForm{
+    display: block;
+}
+
+.wikiPage{
+    color: black;
+    background-color: orange;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
