@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import PetForm from './PetForm';
-import PetCardList from './PetCardList.js';
+import CatForm from './CatForm';
+import CatCard from './CatCard.js';
 
-export default function PetPage() {
+export default function CatPage() {
 	
 	const initialUrlSettings = {
 		base: 'https://api.thecatapi.com/v1/images/search?',
-		breed: '',
+		breed: 'abys',
 		// key: process.env.CAT_API_KEY,
-		limit: '5'
+		limit: '1'
 	};
 
 	const [urlSettings, setUrlSettings] = useState(initialUrlSettings)
@@ -32,7 +32,7 @@ export default function PetPage() {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data)
+				console.log(data[0].breeds[0].name)
 				setCatList(data)});
 	}
 
@@ -44,8 +44,8 @@ export default function PetPage() {
 	
 	return (
 		<>
-			<PetForm change = {breedChange} submit = {breedSubmit}></PetForm>
-			<PetCardList catList = {catList}></PetCardList>
+			<CatForm change = {breedChange} submit = {breedSubmit}></CatForm>
+			<CatCard petList = {catList}></CatCard>
 		</>
 	);
 }
